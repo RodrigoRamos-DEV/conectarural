@@ -75,6 +75,21 @@
     start();
   }
 
+  // Mobile nav toggle
+  const nav = document.getElementById('site-nav');
+  const togg = document.querySelector('.nav-toggle');
+  if (nav && togg){
+    const setOpen = (open) => {
+      nav.classList.toggle('is-open', open);
+      togg.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    togg.addEventListener('click', ()=> setOpen(!nav.classList.contains('is-open')));
+    nav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> setOpen(false)));
+    window.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') setOpen(false);
+    });
+  }
+
   // Form: feedback local (sem backend)
   const form = document.getElementById('interest-form');
   if (form){
