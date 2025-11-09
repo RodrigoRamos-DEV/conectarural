@@ -18,6 +18,16 @@
       const target = $(id);
       if (!target) return;
       e.preventDefault();
+      // fecha o painel/overlay se estiver aberto antes de rolar
+      const panelOpen = document.querySelector('.side-panel.is-open');
+      if (panelOpen){
+        panelOpen.classList.remove('is-open');
+        document.documentElement.classList.remove('menu-open');
+        const bd = document.querySelector('.nav-backdrop');
+        if (bd) bd.style.display = 'none';
+        const tg = document.querySelector('.nav-toggle');
+        tg?.setAttribute('aria-expanded','false');
+      }
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
@@ -79,11 +89,50 @@
   const nav = document.getElementById('site-nav');
   const togg = document.querySelector('.nav-toggle');
   if (nav && togg){
-    const setOpen = (open) => {
-      nav.classList.toggle('is-open', open);
-      togg.setAttribute('aria-expanded', open ? 'true' : 'false');
+    const docEl = document.documentElement;
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    backdrop.style.display = 'none';
+    document.body.appendChild(backdrop);
+
+    // Cria barra lateral e move a nav para dentro
+    const panel = document.createElement('div');
+    panel.className = 'side-panel';
+    document.body.appendChild(panel);
+
+    // Botão de fechar dentro do painel
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'nav-toggle panel-close';
+    closeBtn.setAttribute('aria-label','Fechar menu');
+    closeBtn.addEventListener('click', ()=> setOpen(false));
+    panel.appendChild(closeBtn);
+
+    const headerContainer = document.querySelector('.site-header .container');
+    const mql = window.matchMedia('(max-width: 720px)');
+    const relocate = () => {
+      if (mql.matches){
+        if (nav.parentElement !== panel) panel.appendChild(nav);
+      } else {
+        if (nav.parentElement !== headerContainer) headerContainer.appendChild(nav);
+        // garante estado fechado ao sair do mobile
+        panel.classList.remove('is-open');
+        backdrop.style.display = 'none';
+        docEl.classList.remove('menu-open');
+        togg.setAttribute('aria-expanded','false');
+      }
     };
-    togg.addEventListener('click', ()=> setOpen(!nav.classList.contains('is-open')));
+    relocate();
+    mql.addEventListener('change', relocate);
+
+    const isOpen = () => panel.classList.contains('is-open');
+    const setOpen = (open) => {
+      panel.classList.toggle('is-open', open);
+      togg.setAttribute('aria-expanded', open ? 'true' : 'false');
+      docEl.classList.toggle('menu-open', open);
+      backdrop.style.display = open ? 'block' : 'none';
+    };
+    togg.addEventListener('click', ()=> setOpen(!isOpen()));
+    backdrop.addEventListener('click', ()=> setOpen(false));
     nav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> setOpen(false)));
     window.addEventListener('keydown', (e)=>{
       if (e.key === 'Escape') setOpen(false);

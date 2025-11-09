@@ -9,10 +9,9 @@
     <meta property="og:description" content="Venda direto. Compre melhor. Uma ponte entre quem produz e quem consome." />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#1a5e3b" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌱</text></svg>">
-    <link rel="preconnect" href="" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <link rel="icon" type="image/png" href="assets/Logo.png">
+    <link rel="stylesheet" href="styles.css?v=2" />
+    <script defer src="script.js?v=2"></script>
   </head>
   <body>
     <header class="site-header">
@@ -21,10 +20,10 @@
           <img src="assets/Logo.png" class="logo-img" alt="Conecta Rural" />
           <strong>Conecta Rural</strong>
         </a>
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-controls="site-nav" aria-expanded="false"></button>
         <nav class="nav" id="site-nav">
           <a href="#inicio">Início</a>
-          <a href="#como-funciona">Como Funciona</a>
+          <a href="#como-funciona">Como funciona</a>
           <a href="#recursos">Recursos</a>
           <a href="#contato" class="btn btn-sm">Quero saber mais</a>
         </nav>
@@ -50,14 +49,14 @@
           <div class="hero-media">
             <div class="device-frame">
               <div class="carousel" aria-roledescription="carousel" aria-label="App screenshots">
-                <button class="car-btn prev" aria-label="Anterior">‹</button>
+                <button class="car-btn prev" aria-label="Anterior">&lsaquo;</button>
                 <ul class="slides">
-                  <li class="slide is-active"><img src="assets/screens/Tela1.png" alt="Tela do app — 1" /></li>
-                  <li class="slide"><img src="assets/screens/Tela2.png" alt="Tela do app — 2" /></li>
-                  <li class="slide"><img src="assets/screens/Tela3.png" alt="Tela do app — 3" /></li>
-                  <li class="slide"><img src="assets/screens/Tela4.png" alt="Tela do app — 4" /></li>
+                  <li class="slide is-active"><img src="assets/screens/Tela1.png" alt="Tela do app 1" /></li>
+                  <li class="slide"><img src="assets/screens/Tela2.png" alt="Tela do app 2" /></li>
+                  <li class="slide"><img src="assets/screens/Tela3.png" alt="Tela do app 3" /></li>
+                  <li class="slide"><img src="assets/screens/Tela4.png" alt="Tela do app 4" /></li>
                 </ul>
-                <button class="car-btn next" aria-label="Próximo">›</button>
+                <button class="car-btn next" aria-label="Próximo">&rsaquo;</button>
                 <div class="dots" role="tablist" aria-label="Seleção de telas"></div>
               </div>
             </div>
@@ -78,8 +77,8 @@
               <p>Converse direto no app, sem intermediários: preço justo para todos.</p>
             </li>
             <li>
-              <h3>Logística e pagamento</h3>
-              <p>Opções integradas para entrega e pagamento, reduzindo fricções.</p>
+              <h3>Controle total</h3>
+              <p>Tenha controle total das suas compras e vendas, com liberdade para negociar como preferir.</p>
             </li>
             <li>
               <h3>Reputação e confiança</h3>
@@ -136,7 +135,7 @@
               <label>
                 <span>Quem é você?</span>
                 <select name="perfil" required>
-                  <option value="">Selecione…</option>
+                  <option value="">Selecione...</option>
                   <option>Produtor(a)</option>
                   <option>Comprador(a)</option>
                   <option>Outro</option>
@@ -168,7 +167,7 @@
           <a href="#contato">Contato</a>
         </div>
         <div class="foot-legal">
-          <span>© <span id="year"></span> Conecta Rural</span>
+          <span>&copy; <span id="year"></span> Conecta Rural</span>
         </div>
       </div>
     </footer>
