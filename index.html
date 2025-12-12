@@ -3,176 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conecta Rural — Aproxima produtor e consumidor</title>
+    <title>Conecta Rural – Aproxima produtor e consumidor</title>
     <meta
       name="description"
       content="Conecta Rural aproxima produtores e consumidores, com negociação transparente, logística e pagamento simples."
     />
-    <meta property="og:title" content="Conecta Rural — Aproxima produtor e consumidor" />
+    <meta property="og:title" content="Conecta Rural – Aproxima produtor e consumidor" />
     <meta property="og:description" content="Venda direto. Compre melhor. Uma ponte entre quem produz e quem consome." />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#1a5e3b" />
     <link rel="icon" type="image/png" href="/assets/Logo.png" />
   </head>
   <body>
-<<<<<<< HEAD
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-=======
-    <header class="site-header">
-      <div class="container">
-        <a href="#inicio" class="brand">
-          <img src="assets/Logo.png" class="logo-img" alt="Conecta Rural" />
-          <strong>Conecta Rural</strong>
-        </a>
-        <button class="nav-toggle" aria-label="Abrir menu" aria-controls="site-nav" aria-expanded="false"></button>
-        <nav class="nav" id="site-nav">
-          <a href="#inicio">Início</a>
-          <a href="#como-funciona">Como funciona</a>
-          <a href="#recursos">Recursos</a>
-          <a href="#contato" class="btn btn-sm">Quero saber mais</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section id="inicio" class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <h1>Venda direto. Compre melhor.</h1>
-            <p>
-              O Conecta Rural aproxima produtores e consumidores, simplificando
-              a venda direta com negociação transparente, logística e pagamento
-              descomplicados.
-            </p>
-            <div class="cta">
-              <a href="#contato" class="btn">Sou produtor</a>
-              <a href="#contato" class="btn btn-alt">Sou comprador</a>
-            </div>
-            <p class="note">Junte-se à nossa lista de interesse e receba novidades do lançamento.</p>
-          </div>
-          <div class="hero-media">
-            <div class="device-frame">
-              <div class="carousel" aria-roledescription="carousel" aria-label="App screenshots">
-                <button class="car-btn prev" aria-label="Anterior">&lsaquo;</button>
-                <ul class="slides">
-                  <li class="slide is-active"><img src="assets/screens/Tela1.png" alt="Tela do app 1" /></li>
-                  <li class="slide"><img src="assets/screens/Tela2.png" alt="Tela do app 2" /></li>
-                  <li class="slide"><img src="assets/screens/Tela3.png" alt="Tela do app 3" /></li>
-                  <li class="slide"><img src="assets/screens/Tela4.png" alt="Tela do app 4" /></li>
-                </ul>
-                <button class="car-btn next" aria-label="Próximo">&rsaquo;</button>
-                <div class="dots" role="tablist" aria-label="Seleção de telas"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="recursos" class="features">
-        <div class="container">
-          <h2>Por que Conecta Rural?</h2>
-          <ul class="feature-grid">
-            <li>
-              <h3>Cadastro simples</h3>
-              <p>Publique seus produtos com poucos toques, defina preço e disponibilidade.</p>
-            </li>
-           
-            <li>
-              <h3>Controle total</h3>
-              <p>Tenha controle total das suas compras e vendas, com liberdade para negociar como preferir.</p>
-            </li>
-            <li>
-              <h3>Reputação e confiança</h3>
-              <p>Avaliações e histórico para fortalecer relações sustentáveis.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="como-funciona" class="how">
-        <div class="container">
-          <h2>Como funciona</h2>
-          <ol class="steps">
-            <li>
-              <strong>Cadastre-se</strong>
-              <span>Crie seu perfil de produtor ou comprador.</span>
-            </li>
-            <li>
-              <strong>Conecte-se</strong>
-              <span>Encontre ofertas próximas e negocie direto no app.</span>
-            </li>
-            <li>
-              <strong>Conclua</strong>
-              <span>Combine entrega, pague com segurança e avalie a experiência.</span>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section id="contato" class="contact">
-        <div class="container">
-          <div class="contact-card">
-            <h2>Entre na lista de interesse</h2>
-            <p>Receba novidades e garanta acesso antecipado ao app.</p>
-            <form id="interest-form" novalidate>
-              <div class="grid">
-                <label>
-                  <span>Nome</span>
-                  <input name="nome" type="text" placeholder="Seu nome" required />
-                </label>
-                <label>
-                  <span>E-mail</span>
-                  <input name="email" type="email" placeholder="voce@email.com" required />
-                </label>
-                <label>
-                  <span>Telefone</span>
-                  <input name="telefone" type="tel" placeholder="(00) 00000-0000" required />
-                </label>
-              </div>
-              <label>
-                <span>Endereço</span>
-                <input name="endereco" type="text" placeholder="Rua, número, bairro, cidade/UF" required />
-              </label>
-              <label>
-                <span>Quem é você?</span>
-                <select name="perfil" required>
-                  <option value="">Selecione...</option>
-                  <option>Produtor(a)</option>
-                  <option>Comprador(a)</option>
-                  <option>Outro</option>
-                </select>
-              </label>
-              <label>
-                <span>Mensagem (opcional)</span>
-                <textarea name="mensagem" rows="3" placeholder="Conte um pouco sobre sua necessidade"></textarea>
-              </label>
-              <button type="submit" class="btn">Quero participar</button>
-              <p class="form-note">Sem spam. Cancelamento a qualquer momento.</p>
-              <p class="form-success" hidden>Obrigado! Em breve entraremos em contato.</p>
-              <p class="form-error" hidden>Não foi possível enviar agora. Tente novamente.</p>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <strong>Conecta Rural</strong>
-          <p class="foot-note">Construindo pontes entre campo e cidade.</p>
-        </div>
-        <div class="foot-links">
-          <a href="#recursos">Recursos</a>
-          <a href="#como-funciona">Como funciona</a>
-          <a href="#contato">Contato</a>
-        </div>
-        <div class="foot-legal">
-          <span>&copy; <span id="year"></span> Conecta Rural</span>
-        </div>
-      </div>
-    </footer>
->>>>>>> d3a8ee7410bf88b1a7847d48eeb64a8e5b4decc1
   </body>
 </html>
