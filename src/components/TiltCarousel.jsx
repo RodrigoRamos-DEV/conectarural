@@ -104,6 +104,7 @@ function VideoSlide({ item, isActive }) {
   };
 
   const toggleMute = () => setMuted((m) => !m);
+  const goFullscreen = () => requestFullscreen(videoRef.current);
 
   return (
     <div className="tilt-video-wrap">
@@ -122,7 +123,20 @@ function VideoSlide({ item, isActive }) {
         <button type="button" onClick={toggleMute} aria-label={muted ? 'Ativar som' : 'Desativar som'}>
           {muted ? '🔇' : '🔊'}
         </button>
+        <button type="button" onClick={goFullscreen} aria-label="Tela cheia">
+          ⛶
+        </button>
       </div>
     </div>
   );
+}
+
+function requestFullscreen(el) {
+  if (!el) return;
+  const fn =
+    el.requestFullscreen ||
+    el.webkitRequestFullscreen ||
+    el.mozRequestFullScreen ||
+    el.msRequestFullscreen;
+  if (fn) fn.call(el);
 }
