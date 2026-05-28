@@ -3,7 +3,9 @@ import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Compradores from './pages/Compradores';
 import Contato from './pages/Contato';
+import ExcluirConta from './pages/ExcluirConta';
 import Home from './pages/Home';
+import Privacidade from './pages/Privacidade';
 import Produtores from './pages/Produtores';
 import Sobre from './pages/Sobre';
 
@@ -103,6 +105,8 @@ function Shell() {
           <Route path="/compradores" element={<Compradores />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/privacidade" element={<Privacidade />} />
+          <Route path="/excluir-conta" element={<ExcluirConta />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
@@ -122,6 +126,12 @@ function Shell() {
             </NavLink>
             <NavLink to="/contato" onClick={closeMenu}>
               Contato
+            </NavLink>
+            <NavLink to="/privacidade" onClick={closeMenu}>
+              Privacidade
+            </NavLink>
+            <NavLink to="/excluir-conta" onClick={closeMenu}>
+              Excluir conta
             </NavLink>
           </div>
           <div className="foot-legal">
